@@ -1,0 +1,45 @@
+.navbar {
+    position: fixed !important;
+    z-index: 2;
+    width: 100%;
+}
+
+.container {
+    .nav-brand {
+        font-size: 16px;
+        .brand {
+            width: 80px;
+        }
+    }
+    .nav-link-header {
+        position: relative;
+        margin: 0 10px;
+        border-radius: 10px;
+        &::before {
+            transform: scaleX(0);
+            transform-origin: bottom right;
+        }
+        &:hover::before {
+            transform: scaleX(1);
+            transform-origin: bottom left;
+        }
+        &::before {
+            content: '';
+            display: block;
+            position: absolute;
+            inset: 0;
+            background: hsl(200 100% 80%);
+            border-radius: 4px;
+            z-index: -1;
+            transition: transform 0.3s ease;
+        }
+    }
+
+    > button {
+        font-size: 1.8rem;
+    }
+}
+
+.fs-3 {
+    font-size: 16px;
+}

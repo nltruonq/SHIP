@@ -1,0 +1,35 @@
+.square {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    margin-bottom: 2px;
+    background-color: white;
+    transition: all 0.2s;
+    &:hover {
+        opacity: 0.7;
+    }
+}
+
+.red {
+    background-color: red;
+}
+
+.blue {
+    background-color: blue;
+}
+
+.yellow {
+    background-color: yellow;
+}
+
+.green {
+    background-color: green;
+}
+
+.pink {
+    background-color: pink;
+}
+
+.hide {
+    display: none;
+}

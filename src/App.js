@@ -1,25 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+
+import { SocketContext, socket } from './socket/socket';
+
+import Home from './pages/Home/Home';
+import Login from './pages/Login/Login';
+import User from './pages/User/User';
+import Game from './pages/Game/Game';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    return (
+        <SocketContext.Provider value={socket}>
+            <BrowserRouter>
+                <div className="App">
+                    <Routes>
+                        <Route path="/" element={<Home />} />
+                        <Route path="/login" element={<Login />} />
+                        <Route path="/user" element={<User />} />
+                        <Route path="/game" element={<Game />} />
+                    </Routes>
+                </div>
+            </BrowserRouter>
+        </SocketContext.Provider>
+    );
 }
 
 export default App;

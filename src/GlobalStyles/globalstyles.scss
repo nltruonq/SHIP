@@ -1,0 +1,59 @@
+@import 'normalize.css';
+@import url('https://fonts.googleapis.com/css2?family=Aclonica&family=Roboto:wght@300;400;500;700&display=swap');
+
+:root {
+    // --color-default: #fff;
+    // --color-primary: #f3a952;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.6rem;
+    line-height: 1.5;
+    text-rendering: optimizeSpeed;
+}
+
+button {
+    border: none;
+    background-color: transparent;
+}
+
+input {
+    border: none;
+    outline: none;
+}
+
+.nav-link {
+    font-size: 1.6rem !important;
+    color: #fff !important;
+}
+
+.red {
+    background-color: red;
+}
+
+.gray {
+    background-color: gray;
+}
+
+// animation
+
+@keyframes opacityChange {
+    from {
+        opacity: 0;
+        transform: translateX(100px);
+    }
+    to {
+        opacity: 1;
+    }
+}
