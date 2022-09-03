@@ -15,7 +15,7 @@ import { getUsersFailed, getUsersStart, getUsersSuccess } from './userSlice';
 export const loginUser = async (user, dispatch, navigate) => {
     dispatch(loginStart());
     try {
-        const res = await axios.post(`http://api-ship.onrender.com/v1/auth/login`, user);
+        const res = await axios.post(`https://api-ship.onrender.com/v1/auth/login`, user);
         dispatch(loginSuccess(res.data));
         navigate('/');
     } catch (err) {
@@ -26,7 +26,7 @@ export const loginUser = async (user, dispatch, navigate) => {
 export const registerUser = async (user, dispatch, handleChangeSign) => {
     dispatch(registerStart());
     try {
-        await axios.post(`http://api-ship.onrender.com/v1/auth/register`, user);
+        await axios.post(`https://api-ship.onrender.com/v1/auth/register`, user);
         dispatch(registerSuccess());
         handleChangeSign();
     } catch (err) {
@@ -37,7 +37,7 @@ export const registerUser = async (user, dispatch, handleChangeSign) => {
 export const logoutUser = async (dispatch, id, navigate, accessToken, axiosJWT) => {
     dispatch(logoutStart());
     try {
-        await axiosJWT.post('http://api-ship.onrender.com/v1/auth/logout', id, {
+        await axiosJWT.post('https://api-ship.onrender.com/v1/auth/logout', id, {
             headers: {
                 token: `Bearer ${accessToken}`,
             },
@@ -52,7 +52,7 @@ export const logoutUser = async (dispatch, id, navigate, accessToken, axiosJWT) 
 export const getAllUser = async (accessToken, dispatch, axiosJWT) => {
     dispatch(getUsersStart());
     try {
-        const res = await axiosJWT.get(`http://api-ship.onrender.com/v1/user`, {
+        const res = await axiosJWT.get(`https://api-ship.onrender.com/v1/user`, {
             headers: {
                 token: `Bearer ${accessToken}`,
             },
